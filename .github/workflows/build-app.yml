@@ -4,13 +4,13 @@ jobs:
   lint:
     runs-on: ubuntu-slim
     steps:
+      - name: Copy Codes
+        uses: actions/checkout@v7
       - name: Install Node
         uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: "npm"
-      - name: Copy Codes
-        uses: actions/checkout@v7
       - name: Install Node Modules
         run: npm ci
       - name: Lint App
@@ -20,13 +20,13 @@ jobs:
     runs-on: ubuntu-slim
     needs: lint
     steps:
+      - name: Copy Codes
+        uses: actions/checkout@v7
       - name: Install Node
         uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: "npm"
-      - name: Copy Codes
-        uses: actions/checkout@v7
       - name: Install Node Modules
         run: npm ci
       - name: Test App
@@ -36,13 +36,13 @@ jobs:
     runs-on: ubuntu-slim
     needs: test
     steps:
+      - name: Copy Codes
+        uses: actions/checkout@v7
       - name: Install Node
         uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: "npm"
-      - name: Copy Codes
-        uses: actions/checkout@v7
       - name: Install Node Modules
         run: npm ci
       - name: Build App
