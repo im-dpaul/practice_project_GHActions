@@ -1,0 +1,10 @@
+name: Track Issues
+on: issues
+jobs:
+  issue:
+    runs-on: ubuntu-slim
+    steps:
+      - name: View GitHub Context
+        run: echo "Context- ${{ toJSON(github.event) }}"
+      - name: View Issue
+        run: echo "Context- ${{ toJSON(github.event.issue) }}"
